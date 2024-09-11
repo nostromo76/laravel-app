@@ -9,19 +9,22 @@
     <h1>Hello From Laravel</h1>
 
     <form  method ="post" action="/" id="">
-        @csrf
-
-    <input type="text" name="username">
-    <button type=submit">Submit</button>
+     <input type="text" name="username">
+    <button type="submit">Submit</button>
     </form>
 
-    <form  method ="POST" action="/" id="">
+    <form method="POST" action="/1" id="">
     @csrf
-
-        <input type="hidden" name="method" value="PUT">
-        
-    <input type="text" name="username">
+   @method('PUT') <!-- This directive is for method spoofing -->
+    <input type="text" name="username" id="">
     <button type="submit">Submit PUT</button>
-    </form>
+</form>
+<form action="/1" method="POST">
+    @csrf
+   @method('DELETE')
+    
+    <button type="submit">Submit DELETE</button>
+</form>
+ 
 </body>
 </html>
