@@ -8,7 +8,7 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 
-<body>
+<body bg-slate-1000 dark:bg-slate-700>
     
 
 
