@@ -1,22 +1,15 @@
 <x-layout>
     <x-header>Post index Page</x-header>
-    
-    <div>
-        <section>
-            <div class="flex justify-end">
-            <a href="/posts/create"class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create</a>
-            </div>
-        </section>
-    </div>
 
-    My name is {{$username}} and i have {{$age}};
-    
-    <ul>
-       @foreach ($posts as $post)
-           <li>{{$post}}</li>
-       @endforeach
-    
-    </ul>
-    
+    <div class="max-w-2xl mx-auto p-4 bg-slate-200 dark:bg-slate-900 rounded-lg">
+        <h1 class="text-xl font-semibold mb-4">Posts</h1>
+        <ul class="list-disc list-inside">
+            @foreach ($posts as $post)
+                <li class="mb-4 p-4 bg-white rounded shadow">
+                    <h2 class="text-lg font-bold">{{ $post->title }}</h2>
+                    <p class="text-gray-700">{{ $post->content }}</p>
+                </li>
+            @endforeach
+        </ul>
     </div>
 </x-layout>
