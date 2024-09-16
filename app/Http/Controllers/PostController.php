@@ -36,4 +36,30 @@ class PostController extends Controller
     }
 
     // Other methods (show, edit, update, destroy) can be implemented as needed
+
+    public function show(Post $post){
+       // $post=Post::findorFail($id);
+        return view('posts.show',['post'=>$post]);
+
+    }
+
+    public function edit(Post $post){
+        return view('posts.edit',['post'=>$post]);
+    }
+    public function update(Request $request, Post $post)
+{
+    // Validate the incoming request data
+    $validated = $request->validate([
+        'title' => 'required|string|min:5|max:255',
+        'content' => 'required|string|min:10',
+    ]);
+
+    // Update the post with the validated data
+    $post->update($validated);
+
+    // Redirect to the posts index page
+    return redirect()->route('posts.index');
+
+
+    }
 }
