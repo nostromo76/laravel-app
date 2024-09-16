@@ -21,8 +21,8 @@ class PostController extends Controller
     {
         // Validate the request data
         $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'title' => 'required|string|min:5|max:255',
+            'content' => 'required|string|min:10',
         ]);
 
         // Store data in the database
