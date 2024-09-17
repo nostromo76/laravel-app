@@ -59,7 +59,13 @@ class PostController extends Controller
 
     // Redirect to the posts index page
     return redirect()->route('posts.index');
+}
+
+public function destroy(Post $post)
+{
+    $post->delete();
+    return to_route('posts.index');
+}
 
 
-    }
 }

@@ -12,6 +12,20 @@
                     Edit Content
                 </a>
             </div>
+            <div class="flex justify-end mt-4">
+                <form method="POST" action="{{ route('posts.destroy', $post->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    
+                    <button type="submit"
+                        class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-red-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Delete content
+                    </button>
+                </form>
+            </div>
+            
         </main>
     </div>
 </x-layout>
+
+
