@@ -1,5 +1,5 @@
 <x-layout>
-    <x-header>Post Index Page</x-header>
+    <x-header></x-header>
     @auth
     <section class="p-6 bg-slate-200 dark:bg-slate-900">
         <div class="flex justify-end mb-6">
